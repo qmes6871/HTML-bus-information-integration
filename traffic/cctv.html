@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="경산시 영상(cctv)정보">
+  <title>영상(cctv)정보 - 경산시 교통정보센터</title>
+  <link rel="icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../css/styles.css?v=7">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="../index.html" class="logo">
+          <img src="../images/logo.png" alt="경산시 교통정보센터">
+        </a>
+
+        <nav class="desktop-nav">
+          <ul class="nav-menu">
+            <li class="nav-item"><a href="../center/intro.html" class="nav-link">센터소개</a></li>
+            <li class="nav-item"><a href="../traffic/cctv.html" class="nav-link">교통정보</a></li>
+            <li class="nav-item"><a href="../bus/fare.html" class="nav-link">버스정보</a></li>
+            <li class="nav-item"><a href="../support/notice.html" class="nav-link">고객센터</a></li>
+            <li class="nav-item"><a href="../directions.html" class="nav-link">길찾기</a></li>
+          </ul>
+        </nav>
+
+        <button class="mobile-menu-button">
+          <svg class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg class="close-icon" style="display: none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <nav>
+        <!-- 센터소개 -->
+        <div class="mobile-menu-item">
+          <button class="mobile-menu-header">
+            <span>센터소개</span>
+            <svg class="chevron-down" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+          <div class="mobile-submenu">
+            <a href="../center/intro.html">센터소개</a>
+            <a href="../center/location.html">오시는길</a>
+            <a href="../center/its.html">ITS 안내</a>
+            <a href="../center/bis.html">BIS 안내</a>
+          </div>
+        </div>
+
+        <!-- 교통정보 -->
+        <div class="mobile-menu-item">
+          <button class="mobile-menu-header">
+            <span>교통정보</span>
+            <svg class="chevron-down" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+          <div class="mobile-submenu">
+            <a href="../traffic/cctv.html">영상(cctv)정보</a>
+            <a href="../traffic/parking.html">주차(PIS)정보</a>
+            <a href="../traffic/vms.html">도로 전광표지(VMS)정보</a>
+            <a href="../traffic/incident.html">돌발 및 통제정보</a>
+            <a href="../traffic/statistics.html">교통소통정보 통계</a>
+          </div>
+        </div>
+
+        <!-- 버스정보 -->
+        <div class="mobile-menu-item">
+          <button class="mobile-menu-header">
+            <span>버스정보</span>
+            <svg class="chevron-down" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+          <div class="mobile-submenu">
+            <a href="../bus/fare.html">요금안내</a>
+            <a href="../bus/transfer.html">환승안내</a>
+            <a href="../bus/schedule.html">버스운행 시간표</a>
+            <a href="../bus/lowfloor.html">저상버스 운행안내</a>
+            <a href="../bus/stops.html">정류소 위치 안내</a>
+            <a href="../bus/company.html">버스회사 정보조회</a>
+          </div>
+        </div>
+
+        <!-- 고객센터 -->
+        <div class="mobile-menu-item">
+          <button class="mobile-menu-header">
+            <span>고객센터</span>
+            <svg class="chevron-down" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+          <div class="mobile-submenu">
+            <a href="../support/notice.html">공지사항</a>
+            <a href="../support/sitemap.html">사이트</a>
+          </div>
+        </div>
+
+        <!-- 길찾기 -->
+        <div class="mobile-menu-item">
+          <button class="mobile-menu-header">
+            <span>길찾기</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mega Menu (Desktop) -->
+    <div class="mega-menu">
+      <div class="container">
+        <div class="mega-menu-content">
+          <!-- Left Side -->
+          <div class="mega-menu-left animate-fade-in">
+            <h2 class="mega-menu-title">센터소개</h2>
+            <div class="mega-menu-banner">
+              <img src="../images/ks-menu-banner.jpg" alt="안전하고 편리하게! 경산시교통정보센터">
+            </div>
+          </div>
+
+          <!-- Right Side - All Menu Columns -->
+          <div class="mega-menu-right">
+            <!-- 센터소개 -->
+            <div class="mega-menu-column animate-fade-in-up">
+              <h3>센터소개</h3>
+              <ul>
+                <li class="animate-fade-in"><a href="../center/intro.html">센터소개</a></li>
+                <li class="animate-fade-in animation-delay-100"><a href="../center/location.html">오시는길</a></li>
+                <li class="animate-fade-in animation-delay-200"><a href="../center/its.html">ITS 안내</a></li>
+                <li class="animate-fade-in animation-delay-300"><a href="../center/bis.html">BIS 안내</a></li>
+              </ul>
+            </div>
+
+            <!-- 교통정보 -->
+            <div class="mega-menu-column animate-fade-in-up animation-delay-100">
+              <h3>교통정보</h3>
+              <ul>
+                <li class="animate-fade-in"><a href="../traffic/cctv.html">영상(cctv)정보</a></li>
+                <li class="animate-fade-in animation-delay-100"><a href="../traffic/parking.html">주차(PIS)정보</a></li>
+                <li class="animate-fade-in animation-delay-200"><a href="../traffic/vms.html">도로 전광표지(VMS)정보</a></li>
+                <li class="animate-fade-in animation-delay-300"><a href="../traffic/incident.html">돌발 및 통제정보</a></li>
+                <li class="animate-fade-in animation-delay-400"><a href="../traffic/statistics.html">교통소통정보 통계</a></li>
+              </ul>
+            </div>
+
+            <!-- 버스정보 -->
+            <div class="mega-menu-column animate-fade-in-up animation-delay-200">
+              <h3>버스정보</h3>
+              <ul>
+                <li class="animate-fade-in"><a href="../bus/fare.html">요금안내</a></li>
+                <li class="animate-fade-in animation-delay-100"><a href="../bus/transfer.html">환승안내</a></li>
+                <li class="animate-fade-in animation-delay-200"><a href="../bus/schedule.html">버스운행 시간표</a></li>
+                <li class="animate-fade-in animation-delay-300"><a href="../bus/lowfloor.html">저상버스 운행안내</a></li>
+                <li class="animate-fade-in animation-delay-400"><a href="../bus/stops.html">정류소 위치 안내</a></li>
+                <li class="animate-fade-in animation-delay-500"><a href="../bus/company.html">버스회사 정보조회</a></li>
+              </ul>
+            </div>
+
+            <!-- 고객센터 -->
+            <div class="mega-menu-column animate-fade-in-up animation-delay-300">
+              <h3>고객센터</h3>
+              <ul>
+                <li class="animate-fade-in"><a href="../support/notice.html">공지사항</a></li>
+                <li class="animate-fade-in animation-delay-100"><a href="../support/sitemap.html">사이트</a></li>
+              </ul>
+            </div>
+
+            <!-- 길찾기 -->
+            <div class="mega-menu-column animate-fade-in-up animation-delay-400">
+              <h3>길찾기</h3>
+              <ul>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div style="border-bottom: 1px solid #e5e7eb; background-color: #f9fafb;">
+    <div class="container">
+      <div style="display: flex; align-items: center; gap: 0.25rem; padding: 0.75rem 0; font-size: 0.875rem; color: #6b7280;">
+        <a href="../index.html" style="color: #6b7280; text-decoration: none;">홈</a>
+        <svg style="width: 12px; height: 12px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+        <span>교통정보</span>
+        <svg style="width: 12px; height: 12px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+        <span style="color: #374151;">영상(cctv)정보</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
+    <div class="sub-page-layout">
+      <!-- Mobile Sub-menu -->
+      <div class="mobile-sub-menu">
+        <button class="mobile-sub-menu-header">
+          <span>교통정보</span>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="mobile-sub-menu-content">
+          <a href="cctv.html" class="active">영상(cctv)정보</a>
+          <a href="parking.html">주차(PIS)정보</a>
+          <a href="vms.html">도로 전광표지(VMS)정보</a>
+          <a href="incident.html">돌발 및 통제정보</a>
+          <a href="statistics.html">교통소통정보 통계</a>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="sub-page-sidebar">
+        <div style="background: linear-gradient(to right, #1a5c9e, #2980b9); color: white; padding: 1.25rem; border-radius: 0.5rem 0.5rem 0 0; display: flex; align-items: center; gap: 0.75rem;">
+          <div style="width: 32px; height: 32px; background-color: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+            <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <span style="font-size: 1.25rem; font-weight: bold;">교통정보</span>
+        </div>
+        <nav style="border-left: 4px solid #d1d5db; margin-left: 1.25rem; padding: 1rem 0;">
+          <a href="cctv.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #1a5c9e; font-weight: bold; border-left: 4px solid #1a5c9e; margin-left: -4px; text-decoration: none;">영상(cctv)정보</a>
+          <a href="parking.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none; transition: all 0.3s;">주차(PIS)정보</a>
+          <a href="vms.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none; transition: all 0.3s;">도로 전광표지(VMS)정보</a>
+          <a href="incident.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none; transition: all 0.3s;">돌발 및 통제정보</a>
+          <a href="statistics.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none; transition: all 0.3s;">교통소통정보 통계</a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="sub-page-main">
+        <h2 style="font-size: 1.5rem; font-weight: bold; color: #1e88e5; margin-bottom: 1.5rem;">영상 CCTV 정보</h2>
+
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <!-- Map Area -->
+          <div style="flex: 1; min-width: 300px; background-color: #e8e4d9; border-radius: 0.5rem; border: 1px solid #d1d5db; position: relative; height: 600px;">
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+              <p style="color: #6b7280; text-align: center; padding: 1rem;">지도 영역 (카카오맵 또는 네이버맵 연동 필요)</p>
+            </div>
+
+            <!-- CCTV Video Popup -->
+            <div id="cctv-popup" style="position: absolute; left: 2rem; top: 50%; transform: translateY(-50%); background-color: white; border-radius: 0.5rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border: 1px solid #d1d5db; width: 420px; max-width: calc(100% - 1rem); z-index: 10;">
+              <div style="background-color: #1e88e5; color: white; padding: 1rem; border-radius: 0.5rem 0.5rem 0 0; display: flex; align-items: center; gap: 0.75rem;">
+                <svg style="width: 32px; height: 32px;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="4" width="20" height="14" rx="2" stroke="white" stroke-width="2"/>
+                  <circle cx="18" cy="8" r="1.5" fill="white"/>
+                  <path d="M16 18L12 14L8 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div>
+                  <div style="font-size: 0.75rem; opacity: 0.9;">CCTV</div>
+                  <div id="cctv-location" style="font-size: 1.125rem; font-weight: bold;">중산지구삼거리</div>
+                </div>
+              </div>
+
+              <div style="background-color: black; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
+                <div style="text-align: center; color: white;">
+                  <svg style="width: 64px; height: 64px; margin: 0 auto 0.5rem; opacity: 0.5;" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"/>
+                  </svg>
+                  <p style="font-size: 0.875rem; opacity: 0.75;">CCTV 영상</p>
+                </div>
+              </div>
+
+              <div style="background-color: #1e88e5; color: white; padding: 0.5rem 1rem; border-radius: 0 0 0.5rem 0.5rem; display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-size: 0.875rem;">재생시간 : 26초 전 송출됩니다.</span>
+                <svg style="width: 24px; height: 24px;" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- CCTV Location List -->
+          <div style="width: 320px;">
+            <div style="background-color: white; border-radius: 0.5rem; border: 1px solid #d1d5db; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);">
+              <div style="background-color: #f9fafb; padding: 0.75rem 1rem; border-bottom: 1px solid #d1d5db; display: flex; align-items: center; gap: 0.5rem;">
+                <svg style="width: 24px; height: 24px; color: #4b5563;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="4" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="18" cy="8" r="1.5" fill="currentColor"/>
+                </svg>
+                <h3 style="font-weight: bold; color: #1e88e5; font-size: 1.125rem;">CCTV 도로위치</h3>
+              </div>
+
+              <div style="max-height: 540px; overflow-y: auto;">
+                <button class="cctv-btn active" onclick="selectCCTV('중산지구삼거리')" style="width: 100%; padding: 0.75rem 1rem; text-align: left; border: none; border-bottom: 1px solid #e5e7eb; background-color: #dbeafe; color: #1e88e5; font-weight: 500; cursor: pointer;">중산지구삼거리</button>
+                <button class="cctv-btn" onclick="selectCCTV('경산내거리')" style="width: 100%; padding: 0.75rem 1rem; text-align: left; border: none; border-bottom: 1px solid #e5e7eb; background-color: white; color: #374151; cursor: pointer; transition: background-color 0.3s;">경산내거리</button>
+                <button class="cctv-btn" onclick="selectCCTV('경산오거리')" style="width: 100%; padding: 0.75rem 1rem; text-align: left; border: none; border-bottom: 1px solid #e5e7eb; background-color: white; color: #374151; cursor: pointer; transition: background-color 0.3s;">경산오거리</button>
+                <button class="cctv-btn" onclick="selectCCTV('벽진교차로')" style="width: 100%; padding: 0.75rem 1rem; text-align: left; border: none; border-bottom: 1px solid #e5e7eb; background-color: white; color: #374151; cursor: pointer; transition: background-color 0.3s;">벽진교차로</button>
+                <button class="cctv-btn" onclick="selectCCTV('중산삼거리')" style="width: 100%; padding: 0.75rem 1rem; text-align: left; border: none; border-bottom: 1px solid #e5e7eb; background-color: white; color: #374151; cursor: pointer; transition: background-color 0.3s;">중산삼거리</button>
+                <button class="cctv-btn" onclick="selectCCTV('영대오거리')" style="width: 100%; padding: 0.75rem 1rem; text-align: left; border: none; border-bottom: 1px solid #e5e7eb; background-color: white; color: #374151; cursor: pointer; transition: background-color 0.3s;">영대오거리</button>
+                <button class="cctv-btn" onclick="selectCCTV('압량네거리')" style="width: 100%; padding: 0.75rem 1rem; text-align: left; border: none; border-bottom: 1px solid #e5e7eb; background-color: white; color: #374151; cursor: pointer; transition: background-color 0.3s;">압량네거리</button>
+                <button class="cctv-btn" onclick="selectCCTV('역전네거리')" style="width: 100%; padding: 0.75rem 1rem; text-align: left; border: none; border-bottom: 1px solid #e5e7eb; background-color: white; color: #374151; cursor: pointer; transition: background-color 0.3s;">역전네거리</button>
+                <button class="cctv-btn" onclick="selectCCTV('계양네거리')" style="width: 100%; padding: 0.75rem 1rem; text-align: left; border: none; border-bottom: 1px solid #e5e7eb; background-color: white; color: #374151; cursor: pointer; transition: background-color 0.3s;">계양네거리</button>
+                <button class="cctv-btn" onclick="selectCCTV('대구한의대입구 삼거리')" style="width: 100%; padding: 0.75rem 1rem; text-align: left; border: none; border-bottom: 1px solid #e5e7eb; background-color: white; color: #374151; cursor: pointer; transition: background-color 0.3s;">대구한의대입구 삼거리</button>
+                <button class="cctv-btn" onclick="selectCCTV('자인교차로')" style="width: 100%; padding: 0.75rem 1rem; text-align: left; border: none; border-bottom: 1px solid #e5e7eb; background-color: white; color: #374151; cursor: pointer; transition: background-color 0.3s;">자인교차로</button>
+                <button class="cctv-btn" onclick="selectCCTV('사동삼거리')" style="width: 100%; padding: 0.75rem 1rem; text-align: left; border: none; border-bottom: 1px solid #e5e7eb; background-color: white; color: #374151; cursor: pointer; transition: background-color 0.3s;">사동삼거리</button>
+                <button class="cctv-btn" onclick="selectCCTV('대구카톨릭대 입구')" style="width: 100%; padding: 0.75rem 1rem; text-align: left; border: none; border-bottom: 1px solid #e5e7eb; background-color: white; color: #374151; cursor: pointer; transition: background-color 0.3s;">대구카톨릭대 입구</button>
+                <button class="cctv-btn" onclick="selectCCTV('동강네거리')" style="width: 100%; padding: 0.75rem 1rem; text-align: left; border: none; border-bottom: 1px solid #e5e7eb; background-color: white; color: #374151; cursor: pointer; transition: background-color 0.3s;">동강네거리</button>
+                <button class="cctv-btn" onclick="selectCCTV('진량음사무소')" style="width: 100%; padding: 0.75rem 1rem; text-align: left; border: none; background-color: white; color: #374151; cursor: pointer; transition: background-color 0.3s;">진량음사무소</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-top-content">
+          <span class="footer-title">경산시교통정보센터</span>
+          <div class="footer-links">
+            <a href="#">개인정보보호방침</a>
+            <span class="footer-divider">|</span>
+            <a href="#">찾아오시는길</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-content">
+          <div class="footer-info">
+            <p>경상북도 경산시 원효로 23 3층 경산시교통정보센터 (우)38618</p>
+            <p>대표전화 :</p>
+            <p class="footer-copyright">Copyright(c) 2025 Gyeongsan Traffic information Center. ALL RIGHTS RESERVED.</p>
+          </div>
+
+          <div class="footer-related">
+            <span>관련기관</span>
+            <div class="footer-select-wrapper">
+              <select class="footer-select">
+                <option value="">대구시버스정보센터</option>
+              </select>
+              <button class="footer-button">이동</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    function selectCCTV(location) {
+      // Update location text
+      document.getElementById('cctv-location').textContent = location;
+
+      // Update button styles
+      const buttons = document.querySelectorAll('.cctv-btn');
+      buttons.forEach(btn => {
+        if (btn.textContent === location) {
+          btn.style.backgroundColor = '#dbeafe';
+          btn.style.color = '#1e88e5';
+          btn.style.fontWeight = '500';
+          btn.classList.add('active');
+        } else {
+          btn.style.backgroundColor = 'white';
+          btn.style.color = '#374151';
+          btn.style.fontWeight = 'normal';
+          btn.classList.remove('active');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

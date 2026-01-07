@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BIS 버스정보시스템 안내">
+  <title>BIS 안내 - 경산시 교통정보센터</title>
+  <link rel="icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../css/styles.css?v=7">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="../index.html" class="logo">
+          <img src="../images/logo.png" alt="경산시 교통정보센터">
+        </a>
+
+        <nav class="desktop-nav">
+          <ul class="nav-menu">
+            <li class="nav-item"><a href="../center/intro.html" class="nav-link">센터소개</a></li>
+            <li class="nav-item"><a href="../traffic/cctv.html" class="nav-link">교통정보</a></li>
+            <li class="nav-item"><a href="../bus/fare.html" class="nav-link">버스정보</a></li>
+            <li class="nav-item"><a href="../support/notice.html" class="nav-link">고객센터</a></li>
+            <li class="nav-item"><a href="../directions.html" class="nav-link">길찾기</a></li>
+          </ul>
+        </nav>
+
+        <button class="mobile-menu-button">
+          <svg class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg class="close-icon" style="display: none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <nav>
+        <!-- 센터소개 -->
+        <div class="mobile-menu-item">
+          <button class="mobile-menu-header">
+            <span>센터소개</span>
+            <svg class="chevron-down" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+          <div class="mobile-submenu">
+            <a href="../center/intro.html">센터소개</a>
+            <a href="../center/location.html">오시는길</a>
+            <a href="../center/its.html">ITS 안내</a>
+            <a href="../center/bis.html">BIS 안내</a>
+          </div>
+        </div>
+
+        <!-- 교통정보 -->
+        <div class="mobile-menu-item">
+          <button class="mobile-menu-header">
+            <span>교통정보</span>
+            <svg class="chevron-down" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+          <div class="mobile-submenu">
+            <a href="../traffic/cctv.html">영상(cctv)정보</a>
+            <a href="../traffic/parking.html">주차(PIS)정보</a>
+            <a href="../traffic/vms.html">도로 전광표지(VMS)정보</a>
+            <a href="../traffic/incident.html">돌발 및 통제정보</a>
+            <a href="../traffic/statistics.html">교통소통정보 통계</a>
+          </div>
+        </div>
+
+        <!-- 버스정보 -->
+        <div class="mobile-menu-item">
+          <button class="mobile-menu-header">
+            <span>버스정보</span>
+            <svg class="chevron-down" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+          <div class="mobile-submenu">
+            <a href="../bus/fare.html">요금안내</a>
+            <a href="../bus/transfer.html">환승안내</a>
+            <a href="../bus/schedule.html">버스운행 시간표</a>
+            <a href="../bus/lowfloor.html">저상버스 운행안내</a>
+            <a href="../bus/stops.html">정류소 위치 안내</a>
+            <a href="../bus/company.html">버스회사 정보조회</a>
+          </div>
+        </div>
+
+        <!-- 고객센터 -->
+        <div class="mobile-menu-item">
+          <button class="mobile-menu-header">
+            <span>고객센터</span>
+            <svg class="chevron-down" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+          <div class="mobile-submenu">
+            <a href="../support/notice.html">공지사항</a>
+            <a href="../support/sitemap.html">사이트</a>
+          </div>
+        </div>
+
+        <!-- 길찾기 -->
+        <div class="mobile-menu-item">
+          <button class="mobile-menu-header">
+            <span>길찾기</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mega Menu (Desktop) -->
+    <div class="mega-menu">
+      <div class="container">
+        <div class="mega-menu-content">
+          <!-- Left Side -->
+          <div class="mega-menu-left animate-fade-in">
+            <h2 class="mega-menu-title">센터소개</h2>
+            <div class="mega-menu-banner">
+              <img src="../images/ks-menu-banner.jpg" alt="안전하고 편리하게! 경산시교통정보센터">
+            </div>
+          </div>
+
+          <!-- Right Side - All Menu Columns -->
+          <div class="mega-menu-right">
+            <!-- 센터소개 -->
+            <div class="mega-menu-column animate-fade-in-up">
+              <h3>센터소개</h3>
+              <ul>
+                <li class="animate-fade-in"><a href="../center/intro.html">센터소개</a></li>
+                <li class="animate-fade-in animation-delay-100"><a href="../center/location.html">오시는길</a></li>
+                <li class="animate-fade-in animation-delay-200"><a href="../center/its.html">ITS 안내</a></li>
+                <li class="animate-fade-in animation-delay-300"><a href="../center/bis.html">BIS 안내</a></li>
+              </ul>
+            </div>
+
+            <!-- 교통정보 -->
+            <div class="mega-menu-column animate-fade-in-up animation-delay-100">
+              <h3>교통정보</h3>
+              <ul>
+                <li class="animate-fade-in"><a href="../traffic/cctv.html">영상(cctv)정보</a></li>
+                <li class="animate-fade-in animation-delay-100"><a href="../traffic/parking.html">주차(PIS)정보</a></li>
+                <li class="animate-fade-in animation-delay-200"><a href="../traffic/vms.html">도로 전광표지(VMS)정보</a></li>
+                <li class="animate-fade-in animation-delay-300"><a href="../traffic/incident.html">돌발 및 통제정보</a></li>
+                <li class="animate-fade-in animation-delay-400"><a href="../traffic/statistics.html">교통소통정보 통계</a></li>
+              </ul>
+            </div>
+
+            <!-- 버스정보 -->
+            <div class="mega-menu-column animate-fade-in-up animation-delay-200">
+              <h3>버스정보</h3>
+              <ul>
+                <li class="animate-fade-in"><a href="../bus/fare.html">요금안내</a></li>
+                <li class="animate-fade-in animation-delay-100"><a href="../bus/transfer.html">환승안내</a></li>
+                <li class="animate-fade-in animation-delay-200"><a href="../bus/schedule.html">버스운행 시간표</a></li>
+                <li class="animate-fade-in animation-delay-300"><a href="../bus/lowfloor.html">저상버스 운행안내</a></li>
+                <li class="animate-fade-in animation-delay-400"><a href="../bus/stops.html">정류소 위치 안내</a></li>
+                <li class="animate-fade-in animation-delay-500"><a href="../bus/company.html">버스회사 정보조회</a></li>
+              </ul>
+            </div>
+
+            <!-- 고객센터 -->
+            <div class="mega-menu-column animate-fade-in-up animation-delay-300">
+              <h3>고객센터</h3>
+              <ul>
+                <li class="animate-fade-in"><a href="../support/notice.html">공지사항</a></li>
+                <li class="animate-fade-in animation-delay-100"><a href="../support/sitemap.html">사이트</a></li>
+              </ul>
+            </div>
+
+            <!-- 길찾기 -->
+            <div class="mega-menu-column animate-fade-in-up animation-delay-400">
+              <h3>길찾기</h3>
+              <ul>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div style="border-bottom: 1px solid #e5e7eb; background-color: #f9fafb;">
+    <div class="container">
+      <div style="display: flex; align-items: center; gap: 0.25rem; padding: 0.75rem 0; font-size: 0.875rem; color: #6b7280;">
+        <a href="../index.html" style="color: #6b7280; text-decoration: none;">홈</a>
+        <svg style="width: 12px; height: 12px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+        <span>센터소개</span>
+        <svg style="width: 12px; height: 12px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+        <span style="color: #374151;">BIS 안내</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
+    <div class="sub-page-layout">
+      <!-- Mobile Sub-menu -->
+      <div class="mobile-sub-menu">
+        <button class="mobile-sub-menu-header">
+          <span>센터소개</span>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="mobile-sub-menu-content">
+          <a href="intro.html">센터소개</a>
+          <a href="location.html">오시는길</a>
+          <a href="its.html">ITS 안내</a>
+          <a href="bis.html" class="active">BIS 안내</a>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="sub-page-sidebar">
+        <div style="background: linear-gradient(to right, #1a5c9e, #2980b9); color: white; padding: 1.25rem; border-radius: 0.5rem 0.5rem 0 0; display: flex; align-items: center; gap: 0.75rem;">
+          <div style="width: 32px; height: 32px; background-color: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+            <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <span style="font-size: 1.25rem; font-weight: bold;">센터소개</span>
+        </div>
+        <nav style="border-left: 4px solid #d1d5db; margin-left: 1.25rem; padding: 1rem 0;">
+          <a href="intro.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none; transition: all 0.3s;">센터소개</a>
+          <a href="location.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none; transition: all 0.3s;">오시는길</a>
+          <a href="its.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none; transition: all 0.3s;">ITS 안내</a>
+          <a href="bis.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #1a5c9e; font-weight: bold; border-left: 4px solid #1a5c9e; margin-left: -4px; text-decoration: none;">BIS 안내</a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="sub-page-main">
+        <h2 style="font-size: 1.5rem; font-weight: bold; color: #1e88e5; margin-bottom: 1.5rem;">BIS 안내</h2>
+
+        <!-- Tabs -->
+        <div style="display: flex; border: 1px solid #d1d5db; margin-bottom: 2rem;">
+          <button class="bis-tab active" data-tab="overview" style="flex: 1; padding: 0.75rem; text-align: center; font-weight: 500; background-color: #1a5c9e; color: white; border: none; cursor: pointer;">BIS 개요</button>
+          <button class="bis-tab" data-tab="service" style="flex: 1; padding: 0.75rem; text-align: center; font-weight: 500; background-color: white; color: #4b5563; border-left: 1px solid #d1d5db; cursor: pointer;">서비스 내용</button>
+          <button class="bis-tab" data-tab="guide" style="flex: 1; padding: 0.75rem; text-align: center; font-weight: 500; background-color: white; color: #4b5563; border-left: 1px solid #d1d5db; cursor: pointer;">사이트 이용안내</button>
+        </div>
+
+        <!-- Tab Content: BIS 개요 -->
+        <div id="overview-content" class="tab-content">
+          <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.125rem; font-weight: bold; color: #1f2937; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+              <span style="width: 4px; height: 20px; background-color: #1e88e5;"></span>
+              BIS(Bus Information System)란?
+            </h3>
+            <p style="color: #4b5563; line-height: 1.8; margin-bottom: 0.75rem;">
+              ㆍ시내버스의 운행과 관련된 각종 정보를 실시간 수집 가공하여 버스 이용자에게 제공하는 첨단 교통시스템으로
+              첨단 통신망을 도입하여 실시간 버스 운행정보 수집, 가공을 통해 정보를 제공하는 시스템입니다.
+            </p>
+            <p style="color: #4b5563; line-height: 1.8; margin-bottom: 0.75rem;">
+              ㆍ버스이용자들에게는 각종 매체(버스정보안내기, 인터넷, 모바일 등)을 이용하여 버스도착예정시간,
+              버스위치정보 등을 제공하는 신개념의 대중교통 시스템입니다.
+            </p>
+            <p style="color: #4b5563; line-height: 1.8;">
+              ㆍ버스운전자를 위한 노선정보, 앞·뒤차의 운행정보 등의 제공으로 차량운행관리 등의 서비스를 제공합니다.
+            </p>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <img src="../images/sub-bis-20-20-eb-b3-b5-ec-82-ac-eb-b3-b8.jpg" alt="BIS 시스템 다이어그램" style="width: 100%; height: auto; border-radius: 0.5rem;">
+          </div>
+        </div>
+
+        <!-- Tab Content: 서비스 내용 -->
+        <div id="service-content" class="tab-content" style="display: none;">
+          <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.125rem; font-weight: bold; color: #1f2937; margin-bottom: 1rem; border-left: 4px solid #1a5c9e; padding-left: 0.75rem;">주요 서비스</h3>
+            <ul style="list-style: none; padding: 0;">
+              <li style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;">
+                <span style="color: #1a5c9e; margin-top: 0.25rem;">›</span>
+                <span>버스 실시간 위치정보 제공</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;">
+                <span style="color: #1a5c9e; margin-top: 0.25rem;">›</span>
+                <span>버스 도착예정시간 안내 (정류장별 몇 분 후 도착)</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;">
+                <span style="color: #1a5c9e; margin-top: 0.25rem;">›</span>
+                <span>정류장별 경유노선 정보 제공</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;">
+                <span style="color: #1a5c9e; margin-top: 0.25rem;">›</span>
+                <span>버스운행 관리 및 모니터링 (관제센터)</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;">
+                <span style="color: #1a5c9e; margin-top: 0.25rem;">›</span>
+                <span>노선별 배차간격 및 운행시간 정보</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 style="font-size: 1.125rem; font-weight: bold; color: #1f2937; margin-bottom: 1rem; border-left: 4px solid #1a5c9e; padding-left: 0.75rem;">정보 제공 채널</h3>
+            <ul style="list-style: none; padding: 0;">
+              <li style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;">
+                <span style="color: #1a5c9e; margin-top: 0.25rem;">›</span>
+                <span>정류장 BIT (Bus Information Terminal) - 버스도착안내기</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;">
+                <span style="color: #1a5c9e; margin-top: 0.25rem;">›</span>
+                <span>모바일 앱 - 스마트폰으로 실시간 버스 정보 확인</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;">
+                <span style="color: #1a5c9e; margin-top: 0.25rem;">›</span>
+                <span>홈페이지 - 웹사이트를 통한 버스 정보 조회</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;">
+                <span style="color: #1a5c9e; margin-top: 0.25rem;">›</span>
+                <span>SMS 문자 서비스 - 버스 도착 알림</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;">
+                <span style="color: #1a5c9e; margin-top: 0.25rem;">›</span>
+                <span>차량 내 단말기 - 운전자용 정보 제공</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Tab Content: 사이트 이용안내 -->
+        <div id="guide-content" class="tab-content" style="display: none;">
+          <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.125rem; font-weight: bold; color: #1f2937; margin-bottom: 1rem; border-left: 4px solid #1a5c9e; padding-left: 0.75rem;">BIS 서비스 이용방법</h3>
+            <ul style="list-style: none; padding: 0;">
+              <li style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;">
+                <span style="color: #1a5c9e; margin-top: 0.25rem; font-weight: bold;">1.</span>
+                <span><strong>정류장 안내기</strong> - 정류장에 설치된 BIT 단말기에서 버스 도착 정보를 확인할 수 있습니다.</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;">
+                <span style="color: #1a5c9e; margin-top: 0.25rem; font-weight: bold;">2.</span>
+                <span><strong>모바일 앱</strong> - 경산버스 앱을 다운로드하여 실시간 버스 위치와 도착 시간을 확인하세요.</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;">
+                <span style="color: #1a5c9e; margin-top: 0.25rem; font-weight: bold;">3.</span>
+                <span><strong>홈페이지</strong> - 경산시 교통정보센터 홈페이지에서 버스 정보를 검색할 수 있습니다.</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;">
+                <span style="color: #1a5c9e; margin-top: 0.25rem; font-weight: bold;">4.</span>
+                <span><strong>SMS 알림</strong> - 원하는 정류장과 버스 번호를 등록하면 도착 알림을 받을 수 있습니다.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.125rem; font-weight: bold; color: #1f2937; margin-bottom: 1rem; border-left: 4px solid #1a5c9e; padding-left: 0.75rem;">이용 시 유의사항</h3>
+            <ul style="list-style: none; padding: 0;">
+              <li style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;">
+                <span style="color: #1a5c9e; margin-top: 0.25rem;">›</span>
+                <span>버스 도착 시간은 실시간 교통상황에 따라 변동될 수 있습니다.</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;">
+                <span style="color: #1a5c9e; margin-top: 0.25rem;">›</span>
+                <span>정확한 정보 제공을 위해 최선을 다하고 있으나 통신 장애 시 정보가 지연될 수 있습니다.</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;">
+                <span style="color: #1a5c9e; margin-top: 0.25rem;">›</span>
+                <span>문의사항은 고객센터(☎ 053-813-4640)로 연락주시기 바랍니다.</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;">
+                <span style="color: #1a5c9e; margin-top: 0.25rem;">›</span>
+                <span>BIS 시스템 장애나 개선 사항은 고객센터를 통해 신고해주시기 바랍니다.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 style="font-size: 1.125rem; font-weight: bold; color: #1f2937; margin-bottom: 1rem; border-left: 4px solid #1a5c9e; padding-left: 0.75rem;">권장 환경</h3>
+            <ul style="list-style: none; padding: 0;">
+              <li style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;">
+                <span style="color: #1a5c9e; margin-top: 0.25rem;">›</span>
+                <span>PC: Chrome, Edge, Safari 최신 버전</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;">
+                <span style="color: #1a5c9e; margin-top: 0.25rem;">›</span>
+                <span>모바일: iOS 12 이상, Android 8 이상</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;">
+                <span style="color: #1a5c9e; margin-top: 0.25rem;">›</span>
+                <span>해상도: 1280 x 720 이상 권장</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-top-content">
+          <span class="footer-title">경산시교통정보센터</span>
+          <div class="footer-links">
+            <a href="#">개인정보보호방침</a>
+            <span class="footer-divider">|</span>
+            <a href="#">찾아오시는길</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-content">
+          <div class="footer-info">
+            <p>경상북도 경산시 원효로 23 3층 경산시교통정보센터 (우)38618</p>
+            <p>대표전화 :</p>
+            <p class="footer-copyright">Copyright(c) 2025 Gyeongsan Traffic information Center. ALL RIGHTS RESERVED.</p>
+          </div>
+
+          <div class="footer-related">
+            <span>관련기관</span>
+            <div class="footer-select-wrapper">
+              <select class="footer-select">
+                <option value="">대구시버스정보센터</option>
+              </select>
+              <button class="footer-button">이동</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // Tab switching functionality
+    const tabs = document.querySelectorAll('.bis-tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        const targetTab = this.getAttribute('data-tab');
+
+        // Remove active class from all tabs
+        tabs.forEach(t => {
+          t.style.backgroundColor = 'white';
+          t.style.color = '#4b5563';
+          t.classList.remove('active');
+        });
+
+        // Add active class to clicked tab
+        this.style.backgroundColor = '#1a5c9e';
+        this.style.color = 'white';
+        this.classList.add('active');
+
+        // Hide all tab contents
+        tabContents.forEach(content => {
+          content.style.display = 'none';
+        });
+
+        // Show target tab content
+        document.getElementById(targetTab + '-content').style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
