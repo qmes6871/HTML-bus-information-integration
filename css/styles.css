@@ -121,15 +121,17 @@ header {
 .header-content {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 64px;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  flex-shrink: 0;
+  flex-shrink: 1;
   text-decoration: none;
-  width: 350px;
+  max-width: 350px;
+  min-width: 0;
 }
 
 .logo img {
