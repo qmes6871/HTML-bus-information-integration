@@ -286,13 +286,15 @@
 
     .route-table {
       background-color: white;
+      overflow-x: auto;
     }
 
     .route-table-header {
       display: grid;
-      grid-template-columns: 80px 1fr 50px;
+      grid-template-columns: minmax(70px, auto) 1fr 50px;
       font-size: 12px;
       border-bottom: 1px solid #e5e7eb;
+      min-width: max-content;
     }
 
     .route-table-header div {
@@ -304,9 +306,10 @@
 
     .route-table-row {
       display: grid;
-      grid-template-columns: 80px 1fr 50px;
+      grid-template-columns: minmax(70px, auto) 1fr 50px;
       font-size: 12px;
       border-bottom: 1px solid #f3f4f6;
+      min-width: max-content;
     }
 
     .route-table-row.selected {
@@ -647,16 +650,17 @@
     .arrival-bus-table {
       border: 1px solid #e5e7eb;
       border-radius: 4px;
-      overflow: hidden;
+      overflow-x: auto;
       margin-top: 12px;
     }
 
     .arrival-bus-table-header {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: minmax(70px, auto) 1fr 1fr;
       font-size: 12px;
       background-color: #f9fafb;
       border-bottom: 1px solid #e5e7eb;
+      min-width: max-content;
     }
 
     .arrival-bus-table-header div {
@@ -668,9 +672,10 @@
 
     .arrival-bus-table-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: minmax(70px, auto) 1fr 1fr;
       font-size: 12px;
       border-bottom: 1px solid #f3f4f6;
+      min-width: max-content;
     }
 
     .arrival-bus-table-row > div {
