@@ -889,7 +889,7 @@ footer {
   }
 
   .logo {
-    width: 350px;
+    width: 250px;
     flex-shrink: 0;
     max-width: none;
   }
@@ -906,7 +906,9 @@ footer {
   .mobile-menu-button {
     display: none;
   }
+}
 
+@media (min-width: 768px) {
   .main-grid {
     flex-direction: row;
   }
@@ -931,6 +933,12 @@ footer {
 
   .footer-related {
     width: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .logo {
+    width: 350px;
   }
 }
 
