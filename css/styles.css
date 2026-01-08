@@ -120,7 +120,6 @@ header {
 .header-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   height: 64px;
 }
 
@@ -129,8 +128,7 @@ header {
   align-items: center;
   flex-shrink: 1;
   text-decoration: none;
-  max-width: 350px;
-  min-width: 0;
+  max-width: 200px;
 }
 
 .logo img {
@@ -888,6 +886,12 @@ footer {
 @media (min-width: 768px) {
   .header-content {
     height: 80px;
+  }
+
+  .logo {
+    width: 350px;
+    flex-shrink: 0;
+    max-width: none;
   }
 
   .logo img {
