@@ -7,6 +7,148 @@
   <title>돌발 및 통제정보 - 경산시 교통정보센터</title>
   <link rel="icon" href="../favicon.ico">
   <link rel="stylesheet" href="../css/styles.css?v=9">
+  <style>
+    .incident-layout {
+      display: flex;
+      gap: 1rem;
+    }
+    .incident-map-container {
+      flex: 1;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .incident-map-tabs {
+      display: flex;
+      border-bottom: 1px solid #ddd;
+    }
+    .incident-map-tab {
+      padding: 0.5rem 1rem;
+      background-color: #f5f5f5;
+      border: none;
+      border-right: 1px solid #ddd;
+      cursor: pointer;
+      font-size: 0.8125rem;
+      color: #666;
+    }
+    .incident-map-tab.active {
+      background-color: #4a9cc7;
+      color: white;
+    }
+    .incident-map-tab:hover:not(.active) {
+      background-color: #e8e8e8;
+    }
+    .incident-map {
+      height: 400px;
+      background-color: #f0f0f0;
+    }
+    .incident-list-container {
+      width: 240px;
+      flex-shrink: 0;
+    }
+    .incident-list-header {
+      background-color: #4a9cc7;
+      color: white;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      border-radius: 4px 4px 0 0;
+    }
+    .incident-filter {
+      display: flex;
+      border: 1px solid #ddd;
+      border-top: none;
+      border-bottom: none;
+    }
+    .incident-filter-btn {
+      flex: 1;
+      padding: 0.4rem 0.25rem;
+      background-color: #f5f5f5;
+      border: none;
+      border-right: 1px solid #ddd;
+      cursor: pointer;
+      font-size: 0.6875rem;
+      color: #666;
+    }
+    .incident-filter-btn:last-child {
+      border-right: none;
+    }
+    .incident-filter-btn.active {
+      background-color: #e3f2fd;
+      color: #1976d2;
+      font-weight: 500;
+    }
+    .incident-filter-btn:hover:not(.active) {
+      background-color: #e8e8e8;
+    }
+    .incident-list {
+      border: 1px solid #ddd;
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+      max-height: 340px;
+      overflow-y: auto;
+    }
+    .incident-item {
+      padding: 0.6rem 0.75rem;
+      font-size: 0.75rem;
+      color: #333;
+      border-bottom: 1px solid #eee;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .incident-item:last-child {
+      border-bottom: none;
+    }
+    .incident-item:hover {
+      background-color: #f5f5f5;
+    }
+    .incident-item.active {
+      background-color: #e3f2fd;
+    }
+    .incident-item .location {
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+    .incident-item .type {
+      display: inline-block;
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.625rem;
+      margin-right: 0.25rem;
+    }
+    .incident-item .type.accident {
+      background-color: #ffebee;
+      color: #c62828;
+    }
+    .incident-item .type.construction {
+      background-color: #fff3e0;
+      color: #ef6c00;
+    }
+    .incident-item .type.control {
+      background-color: #e3f2fd;
+      color: #1565c0;
+    }
+    .incident-item .time {
+      font-size: 0.625rem;
+      color: #999;
+    }
+    .incident-item .desc {
+      margin-top: 0.25rem;
+      color: #666;
+      font-size: 0.6875rem;
+    }
+    @media (max-width: 768px) {
+      .incident-layout {
+        flex-direction: column;
+      }
+      .incident-list-container {
+        width: 100%;
+      }
+      .incident-map {
+        height: 300px;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -16,7 +158,6 @@
         <a href="../index.html" class="logo">
           <img src="../images/logo.png" alt="경산시 교통정보센터">
         </a>
-
         <nav class="desktop-nav">
           <ul class="nav-menu">
             <li class="nav-item"><a href="../center/intro.html" class="nav-link">센터소개</a></li>
@@ -26,7 +167,6 @@
             <li class="nav-item"><a href="../directions.html" class="nav-link">길찾기</a></li>
           </ul>
         </nav>
-
         <button class="mobile-menu-button">
           <svg class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -41,7 +181,6 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu">
       <nav>
-        <!-- 센터소개 -->
         <div class="mobile-menu-item">
           <button class="mobile-menu-header">
             <span>센터소개</span>
@@ -56,8 +195,6 @@
             <a href="../center/bis.html">BIS 안내</a>
           </div>
         </div>
-
-        <!-- 교통정보 -->
         <div class="mobile-menu-item">
           <button class="mobile-menu-header">
             <span>교통정보</span>
@@ -73,8 +210,6 @@
             <a href="../traffic/statistics.html">교통소통정보 통계</a>
           </div>
         </div>
-
-        <!-- 버스정보 -->
         <div class="mobile-menu-item">
           <button class="mobile-menu-header">
             <span>버스정보</span>
@@ -91,8 +226,6 @@
             <a href="../bus/company.html">버스회사 정보조회</a>
           </div>
         </div>
-
-        <!-- 고객센터 -->
         <div class="mobile-menu-item">
           <button class="mobile-menu-header">
             <span>고객센터</span>
@@ -105,8 +238,6 @@
             <a href="../support/sitemap.html">사이트</a>
           </div>
         </div>
-
-        <!-- 길찾기 -->
         <div class="mobile-menu-item">
           <button class="mobile-menu-header">
             <span>길찾기</span>
@@ -119,17 +250,13 @@
     <div class="mega-menu">
       <div class="container">
         <div class="mega-menu-content">
-          <!-- Left Side -->
           <div class="mega-menu-left animate-fade-in">
-            <h2 class="mega-menu-title">센터소개</h2>
+            <h2 class="mega-menu-title">교통정보</h2>
             <div class="mega-menu-banner">
               <img src="../images/ks-menu-banner.jpg" alt="안전하고 편리하게! 경산시교통정보센터">
             </div>
           </div>
-
-          <!-- Right Side - All Menu Columns -->
           <div class="mega-menu-right">
-            <!-- 센터소개 -->
             <div class="mega-menu-column animate-fade-in-up">
               <h3>센터소개</h3>
               <ul>
@@ -139,9 +266,7 @@
                 <li class="animate-fade-in animation-delay-300"><a href="../center/bis.html">BIS 안내</a></li>
               </ul>
             </div>
-
-            <!-- 교통정보 -->
-            <div class="mega-menu-column animate-fade-in-up animation-delay-100">
+            <div class="mega-menu-column active animate-fade-in-up animation-delay-100">
               <h3>교통정보</h3>
               <ul>
                 <li class="animate-fade-in"><a href="../traffic/cctv.html">영상(cctv)정보</a></li>
@@ -151,8 +276,6 @@
                 <li class="animate-fade-in animation-delay-400"><a href="../traffic/statistics.html">교통소통정보 통계</a></li>
               </ul>
             </div>
-
-            <!-- 버스정보 -->
             <div class="mega-menu-column animate-fade-in-up animation-delay-200">
               <h3>버스정보</h3>
               <ul>
@@ -164,8 +287,6 @@
                 <li class="animate-fade-in animation-delay-500"><a href="../bus/company.html">버스회사 정보조회</a></li>
               </ul>
             </div>
-
-            <!-- 고객센터 -->
             <div class="mega-menu-column animate-fade-in-up animation-delay-300">
               <h3>고객센터</h3>
               <ul>
@@ -173,12 +294,9 @@
                 <li class="animate-fade-in animation-delay-100"><a href="../support/sitemap.html">사이트</a></li>
               </ul>
             </div>
-
-            <!-- 길찾기 -->
             <div class="mega-menu-column animate-fade-in-up animation-delay-400">
               <h3>길찾기</h3>
-              <ul>
-              </ul>
+              <ul></ul>
             </div>
           </div>
         </div>
@@ -234,37 +352,118 @@
           <span style="font-size: 1.25rem; font-weight: bold;">교통정보</span>
         </div>
         <nav style="border-left: 4px solid #d1d5db; margin-left: 1.25rem; padding: 1rem 0;">
-          <a href="cctv.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none; transition: all 0.3s;">영상(cctv)정보</a>
-          <a href="parking.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none; transition: all 0.3s;">주차(PIS)정보</a>
-          <a href="vms.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none; transition: all 0.3s;">도로 전광표지(VMS)정보</a>
+          <a href="cctv.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none;">영상(cctv)정보</a>
+          <a href="parking.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none;">주차(PIS)정보</a>
+          <a href="vms.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none;">도로 전광표지(VMS)정보</a>
           <a href="incident.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #1a5c9e; font-weight: bold; border-left: 4px solid #1a5c9e; margin-left: -4px; text-decoration: none;">돌발 및 통제정보</a>
-          <a href="statistics.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none; transition: all 0.3s;">교통소통정보 통계</a>
+          <a href="statistics.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none;">교통소통정보 통계</a>
         </nav>
       </aside>
 
       <!-- Main Content -->
       <main class="sub-page-main">
-        <h2 style="font-size: 1.5rem; font-weight: bold; color: #1e88e5; margin-bottom: 1.5rem;">돌발 및 통제정보</h2>
+        <h2 style="font-size: 1.375rem; font-weight: bold; color: #1e88e5; margin-bottom: 1.25rem;">돌발 및 통제정보</h2>
 
-        <p style="color: #4b5563; margin-bottom: 1.5rem;">현재 경산시 내 돌발상황 및 도로 통제 현황입니다.</p>
-
-        <div style="display: flex; flex-direction: column; gap: 1rem;">
-          <div style="border: 1px solid #fca5a5; background-color: #fef2f2; padding: 1rem; border-radius: 0.5rem;">
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-              <span style="background-color: #ef4444; color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.875rem;">사고</span>
-              <span style="font-weight: 500;">경산역 네거리</span>
+        <div class="incident-layout">
+          <!-- Map Area -->
+          <div class="incident-map-container">
+            <div class="incident-map-tabs">
+              <button class="incident-map-tab active">지도</button>
+              <button class="incident-map-tab">스카이뷰</button>
             </div>
-            <p style="color: #4b5563; font-size: 0.875rem;">접촉사고로 인한 1차선 통제 중 (예상해제: 14:00)</p>
+            <div class="incident-map">
+              <!-- 지도 영역 -->
+            </div>
           </div>
-          <div style="border: 1px solid #fdba74; background-color: #fff7ed; padding: 1rem; border-radius: 0.5rem;">
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-              <span style="background-color: #f97316; color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.875rem;">공사</span>
-              <span style="font-weight: 500;">원효로</span>
+
+          <!-- Incident List -->
+          <div class="incident-list-container">
+            <div class="incident-list-header">돌발/통제 현황</div>
+            <div class="incident-filter">
+              <button class="incident-filter-btn active" data-filter="all">전체</button>
+              <button class="incident-filter-btn" data-filter="accident">사고</button>
+              <button class="incident-filter-btn" data-filter="construction">공사</button>
+              <button class="incident-filter-btn" data-filter="control">통제</button>
             </div>
-            <p style="color: #4b5563; font-size: 0.875rem;">도로 보수공사 진행 중 (2025.01.15까지)</p>
+            <div class="incident-list">
+              <div class="incident-item active">
+                <div class="location">경산네거리 부근</div>
+                <span class="type accident">사고</span>
+                <span class="time">10:30</span>
+                <div class="desc">차량 접촉사고 / 처리중</div>
+              </div>
+              <div class="incident-item">
+                <div class="location">중방네거리 ~ 압량네거리</div>
+                <span class="type construction">공사</span>
+                <span class="time">09:00~18:00</span>
+                <div class="desc">도로 보수공사 / 1차선 통제</div>
+              </div>
+              <div class="incident-item">
+                <div class="location">임당역 환승주차장 진입로</div>
+                <span class="type control">통제</span>
+                <span class="time">08:00~</span>
+                <div class="desc">행사로 인한 일시 통제</div>
+              </div>
+              <div class="incident-item">
+                <div class="location">영남대역 부근</div>
+                <span class="type construction">공사</span>
+                <span class="time">22:00~06:00</span>
+                <div class="desc">야간 도로공사 예정</div>
+              </div>
+              <div class="incident-item">
+                <div class="location">경산IC 진출입로</div>
+                <span class="type control">통제</span>
+                <span class="time">상시</span>
+                <div class="desc">대형차량 우회 권장</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- 만족도 평가 -->
+        <div style="margin-top: 3rem; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden;">
+          <div style="background-color: #f8fafc; padding: 0.75rem 1rem; border-bottom: 1px solid #e5e7eb;">
+            <h3 style="font-size: 0.9375rem; font-weight: 600; color: #333; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+              <svg width="18" height="18" fill="none" stroke="#1e88e5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              만족도 평가
+            </h3>
+          </div>
+          <div style="padding: 1.25rem;">
+            <p style="font-size: 0.875rem; color: #333; margin-bottom: 1rem;">현재 페이지의 정보 및 편의성에 만족하십니까?</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 1rem;">
+              <label style="display: flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; color: #555; cursor: pointer;">
+                <input type="radio" name="satisfaction" value="5" style="accent-color: #1e88e5;" checked>
+                매우만족
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; color: #555; cursor: pointer;">
+                <input type="radio" name="satisfaction" value="4" style="accent-color: #1e88e5;">
+                만족
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; color: #555; cursor: pointer;">
+                <input type="radio" name="satisfaction" value="3" style="accent-color: #1e88e5;">
+                보통
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; color: #555; cursor: pointer;">
+                <input type="radio" name="satisfaction" value="2" style="accent-color: #1e88e5;">
+                불만족
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; color: #555; cursor: pointer;">
+                <input type="radio" name="satisfaction" value="1" style="accent-color: #1e88e5;">
+                매우불만족
+              </label>
+              <button style="padding: 0.5rem 1rem; background-color: #1e88e5; color: white; border: none; border-radius: 4px; font-size: 0.8125rem; cursor: pointer; margin-left: auto;">평가하기</button>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; font-size: 0.8125rem; color: #666; padding-top: 1rem; border-top: 1px solid #e5e7eb;">
+              <span><strong>담당부서:</strong> 대중교통과</span>
+              <span><strong>담당자:</strong> 홍길동</span>
+              <span><strong>연락처:</strong> 053-810-6191</span>
+            </div>
           </div>
         </div>
       </main>
+
     </div>
   </div>
 
@@ -282,7 +481,6 @@
         </div>
       </div>
     </div>
-
     <div class="footer-bottom">
       <div class="container">
         <div class="footer-bottom-content">
@@ -291,7 +489,6 @@
             <p>대표전화 :</p>
             <p class="footer-copyright">Copyright(c) 2025 Gyeongsan Traffic information Center. ALL RIGHTS RESERVED.</p>
           </div>
-
           <div class="footer-related">
             <span>관련기관</span>
             <div class="footer-select-wrapper">
@@ -307,5 +504,48 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script>
+    // Map tab switching
+    const mapTabs = document.querySelectorAll('.incident-map-tab');
+    mapTabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        mapTabs.forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    // Filter buttons
+    const filterBtns = document.querySelectorAll('.incident-filter-btn');
+    const incidentItems = document.querySelectorAll('.incident-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        const filter = this.getAttribute('data-filter');
+        incidentItems.forEach(item => {
+          if (filter === 'all') {
+            item.style.display = 'block';
+          } else {
+            const type = item.querySelector('.type');
+            if (type.classList.contains(filter)) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+
+    // Item click
+    incidentItems.forEach(item => {
+      item.addEventListener('click', function() {
+        incidentItems.forEach(i => i.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>

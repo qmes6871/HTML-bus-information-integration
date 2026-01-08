@@ -238,59 +238,144 @@
 
       <!-- Main Content -->
       <main class="sub-page-main">
-        <h2 style="font-size: 1.5rem; font-weight: bold; color: #1e88e5; margin-bottom: 1.5rem;">공지사항</h2>
+        <h2 style="font-size: 1.375rem; font-weight: bold; color: #1e88e5; margin-bottom: 1.5rem;">공지사항</h2>
 
-        <div style="overflow-x: auto;">
-          <table style="width: 100%; border-collapse: collapse;">
-            <thead>
-              <tr style="background-color: #1e88e5; color: white;">
-                <th style="border: 1px solid #ddd; padding: 0.75rem; text-align: center; width: 64px;">번호</th>
-                <th style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">제목</th>
-                <th style="border: 1px solid #ddd; padding: 0.75rem; text-align: center; width: 128px;">등록일</th>
-                <th style="border: 1px solid #ddd; padding: 0.75rem; text-align: center; width: 96px;">조회수</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">5</td>
-                <td style="border: 1px solid #ddd; padding: 0.75rem;">2025년 추석 연휴기간 시내버스 감차운행</td>
-                <td style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">2025-10-10</td>
-                <td style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">152</td>
-              </tr>
-              <tr>
-                <td style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">4</td>
-                <td style="border: 1px solid #ddd; padding: 0.75rem;">803번 버스 운행시간 변경안내(2025 경산갓)</td>
-                <td style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">2025-09-22</td>
-                <td style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">98</td>
-              </tr>
-              <tr>
-                <td style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">3</td>
-                <td style="border: 1px solid #ddd; padding: 0.75rem;">저상버스 예외 승인 노선 안내</td>
-                <td style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">2025-08-18</td>
-                <td style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">76</td>
-              </tr>
-              <tr>
-                <td style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">2</td>
-                <td style="border: 1px solid #ddd; padding: 0.75rem;">경산시 시내버스 노선 재개편(1차) 시행알림</td>
-                <td style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">2025-04-30</td>
-                <td style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">234</td>
-              </tr>
-              <tr>
-                <td style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">1</td>
-                <td style="border: 1px solid #ddd; padding: 0.75rem;">시내버스 운행계획 변경</td>
-                <td style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">2025-04-17</td>
-                <td style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">189</td>
-              </tr>
-            </tbody>
-          </table>
+        <!-- 상단 영역: 페이지 정보 + 검색 -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+          <span style="font-size: 0.8125rem; color: #666;">전체 1/1 Page</span>
+          <div style="display: flex; gap: 0;">
+            <input type="text" placeholder="내용을 입력해 주세요" style="padding: 0.4rem 0.75rem; border: 1px solid #ddd; border-right: none; font-size: 0.8125rem; width: 200px; outline: none;">
+            <button style="padding: 0.4rem 0.5rem; background-color: white; border: 1px solid #ddd; cursor: pointer;">
+              <svg width="16" height="16" fill="none" stroke="#666" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+            </button>
+          </div>
         </div>
 
-        <div style="display: flex; justify-content: center; margin-top: 1.5rem; gap: 0.5rem;">
-          <button style="padding: 0.25rem 0.75rem; border: 1px solid #d1d5db; border-radius: 0.25rem; background-color: white; cursor: pointer;">이전</button>
-          <button style="padding: 0.25rem 0.75rem; background-color: #1e88e5; color: white; border: none; border-radius: 0.25rem; cursor: pointer;">1</button>
-          <button style="padding: 0.25rem 0.75rem; border: 1px solid #d1d5db; border-radius: 0.25rem; background-color: white; cursor: pointer;">다음</button>
+        <!-- 공지사항 목록 -->
+        <div class="notice-list" style="border-top: 2px solid #1e88e5;">
+          <div class="notice-item" data-title="저상버스 예외 승인 노선 안내" data-date="2025-08-18" data-file="저상버스_예외승인노선.pdf" data-views="1523" data-content="저상버스 예외 승인 노선 안내\n\n○ 예외 승인 노선 : 109, 399, 남산1\n○ 사유 : 도로 여건상 저상버스 운행 불가 구간 포함\n\n* 자세한 내용은 첨부파일을 참조하시기 바랍니다." style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0.5rem; border-bottom: 1px solid #eee; cursor: pointer;">
+            <span style="font-size: 0.875rem; color: #333;">저상버스 예외 승인 노선 안내</span>
+            <span style="font-size: 0.8125rem; color: #888; white-space: nowrap; margin-left: 1rem;">2025-08-18</span>
+          </div>
+          <div class="notice-item" data-title="경산시 시내버스 노선 재개편(1차) 시행알림(2025. 4. 30.시행)" data-date="2025-04-30" data-file="노선 재개편(1차)-노선도1.pdf" data-views="3212" data-content="경산시 시내버스 노선 재개편(1차) 시행알림\n\n○ 시 행 일 : 2025. 4. 30.(수) 05:30 ~\n○ 신 설 : 급행803\n○ 노선 변경 : 818, 818-1, 912, 999, 999-1, 남산\n○ 시간표 변경 : 109, 803, 803-1, 989-1\n\n* 노선도 : 첨부파일 참조\n* 시간표 : 경산시 교통정보센터 홈페이지 - 버스정보 - 버스 운행 시간표 참조" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0.5rem; border-bottom: 1px solid #eee; cursor: pointer;">
+            <span style="font-size: 0.875rem; color: #333;">경산시 시내버스 노선 재개편(1차) 시행알림(2025. 4. 30.시행)</span>
+            <span style="font-size: 0.8125rem; color: #888; white-space: nowrap; margin-left: 1rem;">2025-04-30</span>
+          </div>
+          <div class="notice-item" data-title="시내버스 운행계획 변경" data-date="2025-04-17" data-file="" data-views="1892" data-content="시내버스 운행계획 변경 안내\n\n○ 변경 일시 : 2025. 4. 17.(목) ~\n○ 변경 노선 : 100, 100-1, 109번\n○ 변경 내용 : 배차간격 조정" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0.5rem; border-bottom: 1px solid #eee; cursor: pointer;">
+            <span style="font-size: 0.875rem; color: #333;">시내버스 운행계획 변경</span>
+            <span style="font-size: 0.8125rem; color: #888; white-space: nowrap; margin-left: 1rem;">2025-04-17</span>
+          </div>
+          <div class="notice-item" data-title="949번 버스 시간표 변경 안내" data-date="2025-03-28" data-file="" data-views="987" data-content="949번 버스 시간표 변경 안내\n\n○ 시행일 : 2025. 3. 28.(금) ~\n○ 변경 내용 : 첫차/막차 시간 조정\n\n* 자세한 시간표는 버스정보 메뉴에서 확인하시기 바랍니다." style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0.5rem; border-bottom: 1px solid #eee; cursor: pointer;">
+            <span style="font-size: 0.875rem; color: #333;">949번 버스 시간표 변경 안내</span>
+            <span style="font-size: 0.8125rem; color: #888; white-space: nowrap; margin-left: 1rem;">2025-03-28</span>
+          </div>
+          <div class="notice-item" data-title="경산시 교통정보센터 홈 화면 추가방법 안내" data-date="2025-03-19" data-file="" data-views="2341" data-content="경산시 교통정보센터 홈 화면 추가방법 안내\n\n스마트폰에서 경산시 교통정보센터를 홈 화면에 추가하는 방법을 안내드립니다.\n\n○ 아이폰 : Safari 브라우저 → 공유 버튼 → 홈 화면에 추가\n○ 안드로이드 : Chrome 브라우저 → 메뉴 → 홈 화면에 추가" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0.5rem; border-bottom: 1px solid #eee; cursor: pointer;">
+            <span style="font-size: 0.875rem; color: #333;">경산시 교통정보센터 홈 화면 추가방법 안내</span>
+            <span style="font-size: 0.8125rem; color: #888; white-space: nowrap; margin-left: 1rem;">2025-03-19</span>
+          </div>
+          <div class="notice-item" data-title="경산시 시내버스 노선안내" data-date="2025-03-01" data-file="" data-views="1567" data-content="경산시 시내버스 노선안내\n\n경산시에서 운행중인 시내버스 노선을 안내드립니다.\n\n* 자세한 노선 정보는 버스정보 메뉴에서 확인하시기 바랍니다." style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0.5rem; border-bottom: 1px solid #eee; cursor: pointer;">
+            <span style="font-size: 0.875rem; color: #333;">경산시 시내버스 노선안내</span>
+            <span style="font-size: 0.8125rem; color: #888; white-space: nowrap; margin-left: 1rem;">2025-03-01</span>
+          </div>
+          <div class="notice-item" data-title="시내버스 노선개편 시간표" data-date="2025-03-05" data-file="노선개편_시간표.pdf" data-views="2156" data-content="시내버스 노선개편 시간표 안내\n\n○ 시행일 : 2025. 3. 5.(수) ~\n○ 대상 노선 : 전 노선\n\n* 첨부된 시간표를 참조하시기 바랍니다." style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0.5rem; border-bottom: 1px solid #eee; cursor: pointer;">
+            <span style="font-size: 0.875rem; color: #333;">시내버스 노선개편 시간표</span>
+            <span style="font-size: 0.8125rem; color: #888; white-space: nowrap; margin-left: 1rem;">2025-03-05</span>
+          </div>
+          <div class="notice-item" data-title="경산시 시내버스 노선개편 시행알림(변경)" data-date="2025-03-01" data-file="" data-views="1834" data-content="경산시 시내버스 노선개편 시행알림(변경)\n\n○ 변경 시행일 : 2025. 3. 1.(토) ~\n○ 변경 내용 : 일부 노선 경유지 변경" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0.5rem; border-bottom: 1px solid #eee; cursor: pointer;">
+            <span style="font-size: 0.875rem; color: #333;">경산시 시내버스 노선개편 시행알림(변경)</span>
+            <span style="font-size: 0.8125rem; color: #888; white-space: nowrap; margin-left: 1rem;">2025-03-01</span>
+          </div>
+          <div class="notice-item" data-title="대구시 노선개편 안내문" data-date="2025-02-10" data-file="대구시_노선개편_안내문.pdf" data-views="2567" data-content="대구시 노선개편 안내문\n\n대구시 시내버스 노선개편에 따른 경산시 연계노선 변경사항을 안내드립니다.\n\n* 자세한 내용은 첨부파일을 참조하시기 바랍니다." style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0.5rem; border-bottom: 1px solid #eee; cursor: pointer;">
+            <span style="font-size: 0.875rem; color: #333;">대구시 노선개편 안내문</span>
+            <span style="font-size: 0.8125rem; color: #888; white-space: nowrap; margin-left: 1rem;">2025-02-10</span>
+          </div>
+        </div>
+
+        <!-- 모달 -->
+        <div id="noticeModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 9999; overflow-y: auto;">
+          <div style="background-color: white; margin: 1rem; border-radius: 8px; max-width: 800px; margin-left: auto; margin-right: auto; margin-top: 2rem; margin-bottom: 2rem;">
+            <!-- 모달 헤더 -->
+            <div style="padding: 1rem 1.25rem; border-bottom: 2px solid #1e88e5;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+                <h3 id="modalTitle" style="font-size: 1rem; font-weight: 500; color: #1e88e5; margin: 0; line-height: 1.5;"></h3>
+                <span id="modalDate" style="font-size: 0.875rem; color: #666; white-space: nowrap;"></span>
+              </div>
+            </div>
+            <!-- 첨부파일 & 정보 -->
+            <div id="modalFileInfo" style="padding: 0.75rem 1.25rem; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+              <div id="modalFile" style="display: flex; align-items: center; gap: 0.5rem;"></div>
+              <span id="modalViews" style="font-size: 0.75rem; color: #888;"></span>
+            </div>
+            <!-- 모달 본문 -->
+            <div id="modalContent" style="padding: 1.5rem 1.25rem; font-size: 0.875rem; color: #333; line-height: 1.8; white-space: pre-line; min-height: 150px;"></div>
+            <!-- 모달 푸터 -->
+            <div style="padding: 1rem 1.25rem; border-top: 1px solid #eee; text-align: center;">
+              <button id="modalCloseBtn" style="padding: 0.6rem 2.5rem; background-color: #1e88e5; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.875rem;">닫기</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 페이지네이션 -->
+        <div style="display: flex; justify-content: center; margin-top: 1.5rem; gap: 0.25rem;">
+          <button style="width: 32px; height: 32px; border: 1px solid #ddd; border-radius: 3px; background-color: white; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+            <svg width="12" height="12" fill="none" stroke="#666" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            </svg>
+          </button>
+          <button style="width: 32px; height: 32px; background-color: #1e88e5; color: white; border: none; border-radius: 3px; cursor: pointer; font-size: 0.875rem;">1</button>
+          <button style="width: 32px; height: 32px; border: 1px solid #ddd; border-radius: 3px; background-color: white; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+            <svg width="12" height="12" fill="none" stroke="#666" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+      
+        <!-- 만족도 평가 -->
+        <div style="margin-top: 3rem; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden;">
+          <div style="background-color: #f8fafc; padding: 0.75rem 1rem; border-bottom: 1px solid #e5e7eb;">
+            <h3 style="font-size: 0.9375rem; font-weight: 600; color: #333; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+              <svg width="18" height="18" fill="none" stroke="#1e88e5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              만족도 평가
+            </h3>
+          </div>
+          <div style="padding: 1.25rem;">
+            <p style="font-size: 0.875rem; color: #333; margin-bottom: 1rem;">현재 페이지의 정보 및 편의성에 만족하십니까?</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 1rem;">
+              <label style="display: flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; color: #555; cursor: pointer;">
+                <input type="radio" name="satisfaction" value="5" style="accent-color: #1e88e5;" checked>
+                매우만족
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; color: #555; cursor: pointer;">
+                <input type="radio" name="satisfaction" value="4" style="accent-color: #1e88e5;">
+                만족
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; color: #555; cursor: pointer;">
+                <input type="radio" name="satisfaction" value="3" style="accent-color: #1e88e5;">
+                보통
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; color: #555; cursor: pointer;">
+                <input type="radio" name="satisfaction" value="2" style="accent-color: #1e88e5;">
+                불만족
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; color: #555; cursor: pointer;">
+                <input type="radio" name="satisfaction" value="1" style="accent-color: #1e88e5;">
+                매우불만족
+              </label>
+              <button style="padding: 0.5rem 1rem; background-color: #1e88e5; color: white; border: none; border-radius: 4px; font-size: 0.8125rem; cursor: pointer; margin-left: auto;">평가하기</button>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; font-size: 0.8125rem; color: #666; padding-top: 1rem; border-top: 1px solid #e5e7eb;">
+              <span><strong>담당부서:</strong> 대중교통과</span>
+              <span><strong>담당자:</strong> 홍길동</span>
+              <span><strong>연락처:</strong> 053-810-6191</span>
+            </div>
+          </div>
         </div>
       </main>
+
     </div>
   </div>
 
@@ -333,5 +418,64 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script>
+    // 공지사항 모달 기능
+    const modal = document.getElementById('noticeModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDate = document.getElementById('modalDate');
+    const modalFile = document.getElementById('modalFile');
+    const modalViews = document.getElementById('modalViews');
+    const modalContent = document.getElementById('modalContent');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const noticeItems = document.querySelectorAll('.notice-item');
+
+    // 공지사항 항목 클릭 시 모달 열기
+    noticeItems.forEach(item => {
+      item.addEventListener('click', function() {
+        const title = this.dataset.title;
+        const date = this.dataset.date;
+        const file = this.dataset.file;
+        const views = this.dataset.views;
+        const content = this.dataset.content;
+
+        modalTitle.textContent = title;
+        modalDate.textContent = date;
+        modalContent.textContent = content;
+        modalViews.textContent = '조회수 ' + views;
+
+        // 첨부파일 표시
+        if (file) {
+          modalFile.innerHTML = '<svg width="14" height="14" fill="none" stroke="#666" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg><a href="#" style="font-size: 0.8125rem; color: #1e88e5; text-decoration: underline;">' + file + '</a>';
+        } else {
+          modalFile.innerHTML = '<span style="font-size: 0.8125rem; color: #999;">첨부파일 없음</span>';
+        }
+
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // 목록 버튼 클릭 시 모달 닫기
+    modalCloseBtn.addEventListener('click', function() {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+
+    // 모달 배경 클릭 시 닫기
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+
+    // ESC 키 누르면 모달 닫기
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.style.display === 'block') {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
 </body>
 </html>

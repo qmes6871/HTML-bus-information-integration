@@ -7,6 +7,233 @@
   <title>교통소통정보 통계 - 경산시 교통정보센터</title>
   <link rel="icon" href="../favicon.ico">
   <link rel="stylesheet" href="../css/styles.css?v=9">
+  <style>
+    .stats-search {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      padding: 1rem;
+      background-color: #f8f9fa;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+    .stats-search select {
+      padding: 0.4rem 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      font-size: 0.8125rem;
+      background-color: white;
+    }
+    .stats-search .search-group {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .stats-search .search-label {
+      font-size: 0.75rem;
+      color: #666;
+      margin-right: 0.25rem;
+    }
+    .stats-search .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .stats-search .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 0.15rem;
+      font-size: 0.75rem;
+      color: #333;
+    }
+    .stats-search .checkbox-item input {
+      margin: 0;
+    }
+    .stats-search .search-btn {
+      padding: 0.4rem 0.5rem;
+      background-color: #4a9cc7;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .stats-search .search-btn:hover {
+      background-color: #3d8ab3;
+    }
+    .stats-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 0;
+      border-bottom: 2px solid #4a9cc7;
+    }
+    .stats-tab {
+      padding: 0.5rem 1rem;
+      background-color: #e8e8e8;
+      border: 1px solid #ddd;
+      border-bottom: none;
+      cursor: pointer;
+      font-size: 0.8125rem;
+      color: #666;
+      margin-right: -1px;
+    }
+    .stats-tab.active {
+      background-color: #4a9cc7;
+      color: white;
+      border-color: #4a9cc7;
+    }
+    .stats-tab:hover:not(.active) {
+      background-color: #ddd;
+    }
+    .stats-actions {
+      display: flex;
+      gap: 0.5rem;
+      margin-left: auto;
+      align-items: center;
+    }
+    .stats-actions select {
+      padding: 0.3rem 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      font-size: 0.75rem;
+    }
+    .stats-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    .time-row {
+      display: flex;
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      border-bottom: none;
+    }
+    .time-row .label {
+      width: 180px;
+      flex-shrink: 0;
+      padding: 0.4rem 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-align: center;
+      border-right: 1px solid #ddd;
+      background-color: #4a9cc7;
+      color: white;
+    }
+    .time-row .times {
+      display: flex;
+      flex: 1;
+      overflow-x: auto;
+    }
+    .time-row .time-cell {
+      min-width: 40px;
+      padding: 0.4rem 0.25rem;
+      font-size: 0.6875rem;
+      text-align: center;
+      border-right: 1px solid #e0e0e0;
+      color: #666;
+    }
+    .time-row .time-cell:last-child {
+      border-right: none;
+    }
+    .stats-table-wrapper {
+      overflow-x: auto;
+      border: 1px solid #ddd;
+    }
+    .stats-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.75rem;
+      min-width: 1200px;
+    }
+    .stats-table th {
+      background-color: #4a9cc7;
+      color: white;
+      padding: 0.4rem 0.25rem;
+      text-align: center;
+      border: 1px solid #3d8ab3;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .stats-table td {
+      padding: 0.35rem 0.25rem;
+      text-align: center;
+      border: 1px solid #e0e0e0;
+      white-space: nowrap;
+    }
+    .stats-table tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    .stats-table tbody tr:hover {
+      background-color: #e3f2fd;
+    }
+    .stats-table .route-name {
+      text-align: left;
+      padding-left: 0.5rem;
+      font-weight: 500;
+      min-width: 180px;
+    }
+    .stats-note {
+      font-size: 0.6875rem;
+      color: #999;
+      margin-top: 0.5rem;
+    }
+    .excel-btn {
+      padding: 0.35rem 0.75rem;
+      background-color: #217346;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 0.75rem;
+    }
+    .excel-btn:hover {
+      background-color: #1a5c38;
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.5rem 1rem;
+      background-color: #5c6bc0;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 0.8125rem;
+      margin-top: 0.75rem;
+    }
+    .download-btn:hover {
+      background-color: #4a5ab8;
+    }
+    .stats-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+    @media (max-width: 768px) {
+      .stats-search {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .stats-search .search-group {
+        flex-wrap: wrap;
+      }
+      .stats-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      .stats-actions {
+        margin-left: 0;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -16,7 +243,6 @@
         <a href="../index.html" class="logo">
           <img src="../images/logo.png" alt="경산시 교통정보센터">
         </a>
-
         <nav class="desktop-nav">
           <ul class="nav-menu">
             <li class="nav-item"><a href="../center/intro.html" class="nav-link">센터소개</a></li>
@@ -26,7 +252,6 @@
             <li class="nav-item"><a href="../directions.html" class="nav-link">길찾기</a></li>
           </ul>
         </nav>
-
         <button class="mobile-menu-button">
           <svg class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -41,7 +266,6 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu">
       <nav>
-        <!-- 센터소개 -->
         <div class="mobile-menu-item">
           <button class="mobile-menu-header">
             <span>센터소개</span>
@@ -56,8 +280,6 @@
             <a href="../center/bis.html">BIS 안내</a>
           </div>
         </div>
-
-        <!-- 교통정보 -->
         <div class="mobile-menu-item">
           <button class="mobile-menu-header">
             <span>교통정보</span>
@@ -73,8 +295,6 @@
             <a href="../traffic/statistics.html">교통소통정보 통계</a>
           </div>
         </div>
-
-        <!-- 버스정보 -->
         <div class="mobile-menu-item">
           <button class="mobile-menu-header">
             <span>버스정보</span>
@@ -91,8 +311,6 @@
             <a href="../bus/company.html">버스회사 정보조회</a>
           </div>
         </div>
-
-        <!-- 고객센터 -->
         <div class="mobile-menu-item">
           <button class="mobile-menu-header">
             <span>고객센터</span>
@@ -105,8 +323,6 @@
             <a href="../support/sitemap.html">사이트</a>
           </div>
         </div>
-
-        <!-- 길찾기 -->
         <div class="mobile-menu-item">
           <button class="mobile-menu-header">
             <span>길찾기</span>
@@ -119,17 +335,13 @@
     <div class="mega-menu">
       <div class="container">
         <div class="mega-menu-content">
-          <!-- Left Side -->
           <div class="mega-menu-left animate-fade-in">
-            <h2 class="mega-menu-title">센터소개</h2>
+            <h2 class="mega-menu-title">교통정보</h2>
             <div class="mega-menu-banner">
               <img src="../images/ks-menu-banner.jpg" alt="안전하고 편리하게! 경산시교통정보센터">
             </div>
           </div>
-
-          <!-- Right Side - All Menu Columns -->
           <div class="mega-menu-right">
-            <!-- 센터소개 -->
             <div class="mega-menu-column animate-fade-in-up">
               <h3>센터소개</h3>
               <ul>
@@ -139,9 +351,7 @@
                 <li class="animate-fade-in animation-delay-300"><a href="../center/bis.html">BIS 안내</a></li>
               </ul>
             </div>
-
-            <!-- 교통정보 -->
-            <div class="mega-menu-column animate-fade-in-up animation-delay-100">
+            <div class="mega-menu-column active animate-fade-in-up animation-delay-100">
               <h3>교통정보</h3>
               <ul>
                 <li class="animate-fade-in"><a href="../traffic/cctv.html">영상(cctv)정보</a></li>
@@ -151,8 +361,6 @@
                 <li class="animate-fade-in animation-delay-400"><a href="../traffic/statistics.html">교통소통정보 통계</a></li>
               </ul>
             </div>
-
-            <!-- 버스정보 -->
             <div class="mega-menu-column animate-fade-in-up animation-delay-200">
               <h3>버스정보</h3>
               <ul>
@@ -164,8 +372,6 @@
                 <li class="animate-fade-in animation-delay-500"><a href="../bus/company.html">버스회사 정보조회</a></li>
               </ul>
             </div>
-
-            <!-- 고객센터 -->
             <div class="mega-menu-column animate-fade-in-up animation-delay-300">
               <h3>고객센터</h3>
               <ul>
@@ -173,12 +379,9 @@
                 <li class="animate-fade-in animation-delay-100"><a href="../support/sitemap.html">사이트</a></li>
               </ul>
             </div>
-
-            <!-- 길찾기 -->
             <div class="mega-menu-column animate-fade-in-up animation-delay-400">
               <h3>길찾기</h3>
-              <ul>
-              </ul>
+              <ul></ul>
             </div>
           </div>
         </div>
@@ -234,48 +437,236 @@
           <span style="font-size: 1.25rem; font-weight: bold;">교통정보</span>
         </div>
         <nav style="border-left: 4px solid #d1d5db; margin-left: 1.25rem; padding: 1rem 0;">
-          <a href="cctv.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none; transition: all 0.3s;">영상(cctv)정보</a>
-          <a href="parking.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none; transition: all 0.3s;">주차(PIS)정보</a>
-          <a href="vms.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none; transition: all 0.3s;">도로 전광표지(VMS)정보</a>
-          <a href="incident.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none; transition: all 0.3s;">돌발 및 통제정보</a>
+          <a href="cctv.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none;">영상(cctv)정보</a>
+          <a href="parking.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none;">주차(PIS)정보</a>
+          <a href="vms.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none;">도로 전광표지(VMS)정보</a>
+          <a href="incident.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #4b5563; text-decoration: none;">돌발 및 통제정보</a>
           <a href="statistics.html" style="display: block; padding: 0.75rem 1.5rem; font-size: 15px; color: #1a5c9e; font-weight: bold; border-left: 4px solid #1a5c9e; margin-left: -4px; text-decoration: none;">교통소통정보 통계</a>
         </nav>
       </aside>
 
       <!-- Main Content -->
       <main class="sub-page-main">
-        <h2 style="font-size: 1.5rem; font-weight: bold; color: #1e88e5; margin-bottom: 1.5rem;">교통소통정보 통계</h2>
+        <h2 style="font-size: 1.375rem; font-weight: bold; color: #1e88e5; margin-bottom: 1.25rem;">교통소통정보 통계</h2>
 
-        <p style="color: #4b5563; margin-bottom: 1.5rem;">경산시 주요 도로의 교통소통 통계 정보입니다.</p>
-
-        <div style="background-color: #f3f4f6; height: 256px; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-          <p style="color: #6b7280;">통계 차트 영역</p>
+        <!-- Search Form -->
+        <div class="stats-search">
+          <div class="search-group">
+            <span class="search-label">구 분</span>
+            <select>
+              <option>전체구간</option>
+            </select>
+          </div>
+          <div class="search-group">
+            <span class="search-label">카테고리</span>
+            <select>
+              <option>기준선택</option>
+            </select>
+          </div>
+          <div class="search-group">
+            <span class="search-label">요일</span>
+            <div class="checkbox-group">
+              <label class="checkbox-item"><input type="checkbox" checked> 요일별</label>
+              <label class="checkbox-item"><input type="checkbox"> 공휴일</label>
+            </div>
+          </div>
+          <div class="search-group">
+            <span class="search-label">년 도</span>
+            <select>
+              <option>2025</option>
+              <option>2024</option>
+            </select>
+            <span style="font-size: 0.75rem; color: #666;">년</span>
+            <select>
+              <option>01</option>
+              <option>02</option>
+              <option>03</option>
+              <option>04</option>
+              <option>05</option>
+              <option>06</option>
+              <option>07</option>
+              <option>08</option>
+              <option>09</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+            </select>
+            <span style="font-size: 0.75rem; color: #666;">월</span>
+            <select>
+              <option>01</option>
+              <option>02</option>
+              <option>03</option>
+              <option>04</option>
+              <option>05</option>
+              <option>06</option>
+              <option>07</option>
+              <option>08</option>
+              <option>09</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+              <option>18</option>
+              <option>19</option>
+              <option>20</option>
+              <option>21</option>
+              <option>22</option>
+              <option>23</option>
+              <option>24</option>
+              <option>25</option>
+              <option>26</option>
+              <option>27</option>
+              <option>28</option>
+              <option>29</option>
+              <option>30</option>
+              <option>31</option>
+            </select>
+            <span style="font-size: 0.75rem; color: #666;">일</span>
+          </div>
+          <button class="search-btn" title="검색">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </button>
         </div>
 
-        <div style="overflow-x: auto;">
-          <table style="width: 100%; border-collapse: collapse;">
+        <!-- Results Header -->
+        <div class="stats-header">
+          <div class="stats-tabs">
+            <button class="stats-tab active">교통량</button>
+            <button class="stats-tab">국가간선최대통행량일때</button>
+          </div>
+        </div>
+
+        <!-- Results Table -->
+        <div class="stats-table-wrapper">
+          <table class="stats-table">
             <thead>
-              <tr style="background-color: #1e88e5; color: white;">
-                <th style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">구간</th>
-                <th style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">평균속도</th>
-                <th style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">소통상태</th>
+              <tr>
+                <th rowspan="2" style="min-width: 180px;">구 분</th>
+                <th colspan="24">시간대별 교통량</th>
+              </tr>
+              <tr>
+                <th>20시</th>
+                <th>21시</th>
+                <th>22시</th>
+                <th>23시</th>
+                <th>0시</th>
+                <th>1시</th>
+                <th>2시</th>
+                <th>3시</th>
+                <th>4시</th>
+                <th>5시</th>
+                <th>6시</th>
+                <th>7시</th>
+                <th>8시</th>
+                <th>9시</th>
+                <th>10시</th>
+                <th>11시</th>
+                <th>12시</th>
+                <th>13시</th>
+                <th>14시</th>
+                <th>15시</th>
+                <th>16시</th>
+                <th>17시</th>
+                <th>18시</th>
+                <th>19시</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">경산역 ~ 시청</td>
-                <td style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">45km/h</td>
-                <td style="border: 1px solid #ddd; padding: 0.75rem; text-align: center; color: #059669;">원활</td>
+                <td class="route-name">경산네 ↔ 서민병원네</td>
+                <td>43</td><td>42</td><td>24</td><td>24.87</td><td>7</td><td>23.8</td><td>9</td><td>17</td><td>11</td><td>36</td><td>51</td><td>54</td><td>41</td><td>31</td><td>37</td><td>45</td><td>58</td><td>42</td><td>24</td><td>26</td><td>31</td><td>31</td><td>51</td><td>54</td>
               </tr>
               <tr>
-                <td style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">시청 ~ 하양</td>
-                <td style="border: 1px solid #ddd; padding: 0.75rem; text-align: center;">32km/h</td>
-                <td style="border: 1px solid #ddd; padding: 0.75rem; text-align: center; color: #ea580c;">서행</td>
+                <td class="route-name">영남대역네 ↔ 중방네거리</td>
+                <td>23</td><td>42</td><td>42</td><td>24.87</td><td>7</td><td>23.8</td><td>9</td><td>17</td><td>11</td><td>36</td><td>51</td><td>54</td><td>41</td><td>31</td><td>37</td><td>45</td><td>58</td><td>42</td><td>24</td><td>26</td><td>31</td><td>31</td><td>51</td><td>54</td>
+              </tr>
+              <tr>
+                <td class="route-name">여천역네거리 ↔ 계림병네거리</td>
+                <td>47</td><td>21</td><td>42</td><td>24.87</td><td>7</td><td>23.8</td><td>9</td><td>17</td><td>11</td><td>29</td><td>25</td><td>26</td><td>35</td><td>24</td><td>26</td><td>45</td><td>58</td><td>42</td><td>24</td><td>26</td><td>31</td><td>31</td><td>51</td><td>54</td>
+              </tr>
+              <tr>
+                <td class="route-name">용성네거리 ↔ 옥산네거리</td>
+                <td>29</td><td>42</td><td>42</td><td>24.87</td><td>7</td><td>23.67</td><td>9</td><td>17</td><td>11</td><td>36</td><td>51</td><td>54</td><td>41</td><td>31</td><td>37</td><td>45</td><td>58</td><td>42</td><td>24</td><td>26</td><td>31</td><td>31</td><td>51</td><td>54</td>
+              </tr>
+              <tr>
+                <td class="route-name">경산네거리 ↔ 하양네거리</td>
+                <td>29</td><td>42</td><td>42</td><td>24.87</td><td>7</td><td>23.67</td><td>9</td><td>17</td><td>11</td><td>36</td><td>51</td><td>54</td><td>41</td><td>31</td><td>37</td><td>45</td><td>58</td><td>42</td><td>24</td><td>26</td><td>31</td><td>31</td><td>51</td><td>54</td>
+              </tr>
+              <tr>
+                <td class="route-name">원월네거리 ↔ 영선네골</td>
+                <td>29</td><td>42</td><td>42</td><td>24.87</td><td>7</td><td>23.67</td><td>9</td><td>17</td><td>11</td><td>36</td><td>51</td><td>54</td><td>41</td><td>31</td><td>37</td><td>45</td><td>58</td><td>42</td><td>24</td><td>26</td><td>31</td><td>31</td><td>51</td><td>54</td>
+              </tr>
+              <tr>
+                <td class="route-name">(주)금성라텍 ↔ 불로리네거리</td>
+                <td>29</td><td>42</td><td>42</td><td>24.87</td><td>7</td><td>23.67</td><td>9</td><td>17</td><td>11</td><td>36</td><td>51</td><td>54</td><td>41</td><td>31</td><td>37</td><td>45</td><td>58</td><td>42</td><td>24</td><td>26</td><td>31</td><td>31</td><td>51</td><td>54</td>
+              </tr>
+              <tr>
+                <td class="route-name">경산네거리 ↔ 삼덕교네거리</td>
+                <td>29</td><td>42</td><td>42</td><td>24.87</td><td>7</td><td>23.67</td><td>9</td><td>17</td><td>11</td><td>36</td><td>51</td><td>54</td><td>41</td><td>31</td><td>37</td><td>45</td><td>58</td><td>42</td><td>24</td><td>26</td><td>31</td><td>31</td><td>51</td><td>54</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <div class="stats-bottom">
+          <p class="stats-note">※ 검색된 기간에 VMS 수집률이 저조하여 이 구간에 대한 데이터는 신뢰도가 낮습니다.</p>
+          <button class="download-btn">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            국가간선통행데이터량[다운로드]
+          </button>
+        </div>
+      
+        <!-- 만족도 평가 -->
+        <div style="margin-top: 3rem; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden;">
+          <div style="background-color: #f8fafc; padding: 0.75rem 1rem; border-bottom: 1px solid #e5e7eb;">
+            <h3 style="font-size: 0.9375rem; font-weight: 600; color: #333; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+              <svg width="18" height="18" fill="none" stroke="#1e88e5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              만족도 평가
+            </h3>
+          </div>
+          <div style="padding: 1.25rem;">
+            <p style="font-size: 0.875rem; color: #333; margin-bottom: 1rem;">현재 페이지의 정보 및 편의성에 만족하십니까?</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 1rem;">
+              <label style="display: flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; color: #555; cursor: pointer;">
+                <input type="radio" name="satisfaction" value="5" style="accent-color: #1e88e5;" checked>
+                매우만족
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; color: #555; cursor: pointer;">
+                <input type="radio" name="satisfaction" value="4" style="accent-color: #1e88e5;">
+                만족
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; color: #555; cursor: pointer;">
+                <input type="radio" name="satisfaction" value="3" style="accent-color: #1e88e5;">
+                보통
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; color: #555; cursor: pointer;">
+                <input type="radio" name="satisfaction" value="2" style="accent-color: #1e88e5;">
+                불만족
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; color: #555; cursor: pointer;">
+                <input type="radio" name="satisfaction" value="1" style="accent-color: #1e88e5;">
+                매우불만족
+              </label>
+              <button style="padding: 0.5rem 1rem; background-color: #1e88e5; color: white; border: none; border-radius: 4px; font-size: 0.8125rem; cursor: pointer; margin-left: auto;">평가하기</button>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; font-size: 0.8125rem; color: #666; padding-top: 1rem; border-top: 1px solid #e5e7eb;">
+              <span><strong>담당부서:</strong> 대중교통과</span>
+              <span><strong>담당자:</strong> 홍길동</span>
+              <span><strong>연락처:</strong> 053-810-6191</span>
+            </div>
+          </div>
+        </div>
       </main>
+
     </div>
   </div>
 
@@ -293,7 +684,6 @@
         </div>
       </div>
     </div>
-
     <div class="footer-bottom">
       <div class="container">
         <div class="footer-bottom-content">
@@ -302,7 +692,6 @@
             <p>대표전화 :</p>
             <p class="footer-copyright">Copyright(c) 2025 Gyeongsan Traffic information Center. ALL RIGHTS RESERVED.</p>
           </div>
-
           <div class="footer-related">
             <span>관련기관</span>
             <div class="footer-select-wrapper">
@@ -318,5 +707,15 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script>
+    // Tab switching
+    const statsTabs = document.querySelectorAll('.stats-tab');
+    statsTabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        statsTabs.forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
