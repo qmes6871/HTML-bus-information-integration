@@ -175,6 +175,7 @@ header {
   padding: 0.5rem;
   background: none;
   border: none;
+  margin-left: auto;
   cursor: pointer;
   border-radius: 0.5rem;
 }
